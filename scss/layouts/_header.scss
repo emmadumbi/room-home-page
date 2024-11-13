@@ -1,0 +1,202 @@
+@use "../abstracts/" as a;
+
+.hero {
+    position: relative;
+    @include a.breakpoint-up(medium){
+        display: flex;
+    }
+    
+
+    &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: a.$black;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.6s ease-in-out;
+    }
+
+    &__img {
+        flex: 1;
+            @include a.breakpoint-up(large) {
+                flex: 1.2;
+            }
+    }
+
+    &__img--desktop {
+        @include a.breakpoint-down(small) {
+            display: none;
+        }
+    }
+
+    &__img--mobile {
+        @include a.breakpoint-up(small) {
+            display: none;
+        }
+    }
+
+    label {
+        position: absolute;
+        top: 30px;
+        z-index: 5;
+        left: 0;
+    }
+
+    &__room-logo {
+        position: absolute;
+        top: 32px;
+        left: 40vw;
+        @include a.breakpoint-up(small) {
+            left: 30px;
+        }
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+
+    label {
+        padding-inline-start: 2.083333rem;
+        cursor: pointer;
+        @include a.breakpoint-up(small) {
+            display: none;
+        }
+    }
+
+
+    .close-nav-icon {
+        display: none;
+    }
+
+    &__nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80px;
+        background-color: a.$white;
+        padding-inline-start: 3.125rem;
+        display: flex;
+        visibility: hidden;
+        justify-content: center;
+        gap: 1.875rem;
+        align-items: center;
+        z-index: 2;
+        opacity: 0;
+        transition: opacity 0.6s ease-in-out;
+            @include a.breakpoint-up(small) {
+                visibility: visible;
+                opacity: 1;
+                height: initial;
+                background-color: initial;
+                top: 35px;
+                left: 160px;
+                padding: 0;
+                width: initial;
+                gap: 2rem;
+            }
+
+        &-link {
+            font-size: clamp(1rem, 0.929rem + 0.268vw, 1.25rem);
+            text-transform: lowercase;
+            font-weight: 700;
+            color: a.$very-dark-gray;
+            transition: box-shadow 500ms ease-in-out;
+                @include a.breakpoint-up(small) {
+                    color: a.$white;
+                }
+        }
+    }
+
+    @include a.breakpoint-down(small) {
+        #nav-toggle:checked + label + &__nav {
+            opacity: 1;
+            visibility: visible;
+        }
+    
+        #nav-toggle:checked + label ~ &__overlay {
+            visibility: visible;
+            opacity: 0.6;
+        }
+    
+        #nav-toggle:checked + label img:nth-child(1) {
+            display: none;
+        }
+        
+        #nav-toggle:checked + label img:nth-child(2) {
+            display: inline;
+        }
+    }
+
+    &__text-wraper {
+        position: relative;
+        flex: 1;
+    }
+    
+    &__text {
+        @include a.my-width;
+        padding-block: a.$base-padding;
+        padding-inline: a.$padding-2;
+            @include a.breakpoint-up(medium) {
+                padding-block: a.$base-padding * 2;
+            }
+                @include a.breakpoint-up(large) {
+                    padding: a.$base-padding * 2.5;
+
+                }
+    }
+
+    &__title {
+        font-size: clamp(2.5rem, 2.19rem + 1.161vw, 3.583rem);
+        margin-block-end: a.$base-margin;
+    }
+
+    &__desc {
+        color: a.$dark-gray;
+        font-weight: 500;
+        margin-block-end: a.$margin-2;
+        font-size: clamp(1rem, 0.881rem + 0.446vw, 1.417rem);
+    }
+
+    &__shop-btn {
+        font-size: clamp(1rem, 0.881rem + 0.446vw, 1.417rem);
+        color: a.$very-dark-gray;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 1rem;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+            img {
+                animation: left-to-right 1500ms cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+            }
+    }
+
+    &__pages-btn {
+        background-color: a.$black;
+        position: absolute;
+        top: -50px;
+        right: 0;
+        display: flex;
+        @include a.breakpoint-up(medium){
+            bottom: 0;
+            top: initial;
+            right: initial;
+            left: 0;
+        }
+            a{
+                padding: 0.95rem 1.5rem;
+                display: flex;
+                align-items: center;
+                transition: background-color 500ms ease-in-out;
+            }
+    }
+
+
+}
+
+

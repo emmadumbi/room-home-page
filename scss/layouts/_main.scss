@@ -1,0 +1,64 @@
+@use "../abstracts/" as a;
+
+.about {
+    @include a.breakpoint-up(medium){
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include a.breakpoint-up(large){
+        grid-template-columns: 1fr 48% 1fr;
+    }
+
+    &__text-wraper {
+        @include a.my-width;
+        padding-block: a.$base-padding;
+        padding-inline: a.$padding-2;
+            @include a.breakpoint-up(medium){
+            order: -1;
+            }
+                @include a.breakpoint-up(large){
+                    order: initial;
+                }
+    }
+
+    &__title {
+        font-size: clamp(1rem, 0.81rem + 0.714vw, 1.667rem);
+        margin-block-end: a.$base-margin;
+        text-transform: uppercase;
+        letter-spacing: 0.3rem;
+    }
+
+   
+
+    &__desc {
+        color: a.$dark-gray;
+        font-weight: 500;
+        font-size: clamp(1rem, 0.881rem + 0.446vw, 1.417rem);
+    }
+
+
+    &__img-dark--desktop {
+        @include a.breakpoint-down(small) {
+            display: none;
+        }
+    }
+
+    &__img-dark--mobile {
+        @include a.breakpoint-up(small) {
+            display: none;
+        }
+    }
+
+    &__img-light--desktop {
+        @include a.breakpoint-down(small) {
+            display: none;
+        }
+    }
+
+    &__img-light--mobile {
+        @include a.breakpoint-up(small) {
+            display: none;
+        }
+    }
+}

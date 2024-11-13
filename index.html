@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <title>Frontend Mentor | Room homepage</title>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__img">
+      <img class="hero__img--mobile" src="./images/mobile-image-hero-1.jpg" alt="">
+      <img class="hero__img--desktop" src="./images/desktop-image-hero-1.jpg" alt="">
+    </div>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+
+    <label for="nav-toggle">
+      <img class="open-nav-icon" src="./images/icon-hamburger.svg" alt="">
+      
+      <img class="close-nav-icon" src="./images/icon-close.svg" alt="">
+    </label>
+
+    <nav class="hero__nav">
+      <a class="hero__nav-link" href="index.html">Home</a>
+
+      <a class="hero__nav-link" href="shop.html">Shop</a>
+
+      <a class="hero__nav-link" href="about.html">About</a>
+
+      <a class="hero__nav-link" href="#">Contact</a>
+    </nav>
+
+    <div class="hero__overlay"></div>
+
+    <span class="hero__room-logo">
+      <img src="./images/logo.svg" alt="">
+    </span>
+
+    <section class="hero__text-wraper">
+      <div class="hero__text">
+        <h1 class="hero__title">
+          Discover innovative ways to decorate
+        </h1>
+
+        <p class="hero__desc">
+          We provide unmatched quality, comfort, and style for property owners across the country. 
+          Our experts combine form and function in bringing your vision to life. Create a room in your 
+          own style with our collection and make your property a reflection of you and what you love.
+        </p>
+
+        <a class="hero__shop-btn" href="shop.html">
+          Shop now
+          <img src="./images/icon-arrow.svg" alt="">
+        </a>
+
+      </div>
+
+      <div class="hero__pages-btn">
+        <a class="hero__pages-btn--left" href="shop.html">
+          <img src="./images/icon-angle-left.svg" alt="">
+        </a>
+        <a class="hero__pages-btn--right" href="about.html">
+          <img src="./images/icon-angle-right.svg" alt="">
+        </a>
+      </div>
+
+    </section>
+
+  </header>
+
+  <main class="about">
+    <section>
+      <img class="about__img about__img-dark--mobile" src="./images/image-about-dark-mobile.jpg" alt="">
+      <img class="about__img-dark--desktop" src="images/image-about-dark-desktop.jpg" alt="">
+    </section>
+
+    <section class="about__text-wraper">
+      <article class="about__text">
+        <h2 class="about__title">
+          About our furniture
+        </h2>
+
+        <p class="about__desc">
+          Our multifunctional collection blends design and function to suit your individual taste.
+          Make each room unique, or pick a cohesive theme that best express your interests and what
+          inspires you. Find the furniture pieces you need, from traditional to contemporary styles
+          or anything in between. Product specialists are available to help you create your dream space.
+        </p>
+
+      </article>
+
+    </section>
+
+    <section class="about__img">
+      <img class="about__img-light--mobile" src="./images/image-about-light-mobile.jpg" alt="">
+      <img class="about__img-light--desktop" src="./images/image-about-light-desktop.jpg" alt="">
+    </section>
+  </main>
+  
+  <footer class="footer">
+    <section class="footer__content">
+      <div class="footer__logo">
+        <a href="#">
+          <img src="./images/logo.svg" alt="">
+        </a>
+      </div>
+      
+      <div class="footer__social">
+        <a class="footer__social-link" href="https://x.com/Emmy__Dev" target="_blank">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+
+        <a class="footer__social-link" href="https://github.com/emmadumbi" target="_blank">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        
+        <a class="footer__social-link" href="mailto:dumbiemmanuel29@gmail.com">
+          <i class="fa-regular fa-envelope"></i>
+        </a>
+      </div>
+    </section>
+  </footer>
+</body>
+</html>

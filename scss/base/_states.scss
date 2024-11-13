@@ -1,0 +1,48 @@
+@use "../abstracts/" as a;
+
+@keyframes left-to-right {
+    100%{
+        transform: translateX(170%);
+    }  
+}
+
+.hero__nav-link:hover,
+.hero__nav-link:focus {
+    box-shadow: 0px 1px 0px 0px a.$white;
+}
+
+.hero__nav-link:active {
+    opacity: 0.6;
+}
+
+.hero__pages-btn--left:hover,
+.hero__pages-btn--left:focus,
+.hero__pages-btn--right:hover,
+.hero__pages-btn--right:focus {
+    background-color: a.$dark-gray;
+}
+
+.hero__pages-btn--left:active,
+.hero__pages-btn--right:active{
+    background-color: a.$very-dark-gray;
+}
+
+.footer__social-link:hover,
+.footer__social-link:focus {
+    outline: 1px solid a.$white;
+    border-radius: 50%;
+    outline-offset: 2px;
+    
+}
+
+.hero__shop-btn:active {
+    color: a.$dark-gray;
+}
+
+.footer__social-link:active {
+    background-color: a.$white;
+    color: a.$black;
+    outline: 2px solid a.$black;
+    
+}
+
