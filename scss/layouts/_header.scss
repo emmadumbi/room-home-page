@@ -2,9 +2,11 @@
 
 .hero {
     position: relative;
-    @include a.breakpoint-up(medium){
-        display: flex;
-    }
+    max-width: 1440px;
+    margin-inline: auto;
+        @include a.breakpoint-up(medium){
+            display: flex;
+        }
     
 
     &__overlay {
@@ -23,7 +25,7 @@
     &__img {
         flex: 1;
             @include a.breakpoint-up(large) {
-                flex: 1.2;
+                flex: 1.5;
             }
     }
 
@@ -41,18 +43,23 @@
 
     label {
         position: absolute;
-        top: 30px;
+        top: 50px;
         z-index: 5;
         left: 0;
     }
 
     &__room-logo {
         position: absolute;
-        top: 32px;
-        left: 40vw;
-        @include a.breakpoint-up(small) {
-            left: 30px;
-        }
+        top: 50px;
+        left: 50vw;
+            @include a.breakpoint-up(small) {
+                top: 60px;
+                left: 24px;
+            }
+                @include a.breakpoint-up(large) {
+                    top: 60px;
+                    left: 60px;
+                }
     }
 
     .nav-toggle {
@@ -77,9 +84,10 @@
         top: 0;
         left: 0;
         width: 100%;
-        height: 80px;
+        height: 100px;
         background-color: a.$white;
         padding-inline-start: 3.125rem;
+        padding-block-start: 1.2rem;
         display: flex;
         visibility: hidden;
         justify-content: center;
@@ -93,15 +101,19 @@
                 opacity: 1;
                 height: initial;
                 background-color: initial;
-                top: 35px;
-                left: 160px;
+                top: 60px;
+                left: 140px;
                 padding: 0;
                 width: initial;
-                gap: 2rem;
+                gap: 2.8rem;
             }
+                @include a.breakpoint-up(large) {
+                    top: 60px;
+                    left: 180px;
+                }
 
         &-link {
-            font-size: clamp(1rem, 0.929rem + 0.268vw, 1.25rem);
+            font-size: clamp(1rem, 0.952rem + 0.179vw, 1.167rem);
             text-transform: lowercase;
             font-weight: 700;
             color: a.$very-dark-gray;
@@ -142,28 +154,28 @@
         padding-block: a.$base-padding;
         padding-inline: a.$padding-2;
             @include a.breakpoint-up(medium) {
-                padding-block: a.$base-padding * 2;
+                padding: 5rem 3rem;
             }
                 @include a.breakpoint-up(large) {
-                    padding: a.$base-padding * 2.5;
-
+                    padding: 9.8rem 5rem;
                 }
     }
 
     &__title {
         font-size: clamp(2.5rem, 2.19rem + 1.161vw, 3.583rem);
-        margin-block-end: a.$base-margin;
+        line-height: 1.1;
+        margin-block-end: 1rem;
     }
 
     &__desc {
         color: a.$dark-gray;
         font-weight: 500;
-        margin-block-end: a.$margin-2;
-        font-size: clamp(1rem, 0.881rem + 0.446vw, 1.417rem);
+        margin-block-end: 1.5rem;
+        font-size: clamp(1rem, 0.952rem + 0.179vw, 1.167rem);
     }
 
     &__shop-btn {
-        font-size: clamp(1rem, 0.881rem + 0.446vw, 1.417rem);
+        font-size: clamp(1rem, 0.952rem + 0.179vw, 1.167rem);
         color: a.$very-dark-gray;
         text-transform: uppercase;
         font-weight: 700;
@@ -171,6 +183,7 @@
         display: flex;
         gap: 1rem;
         align-items: center;
+        margin-block-end: 3rem;
             img {
                 animation: left-to-right 1500ms cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
             }
@@ -179,20 +192,26 @@
     &__pages-btn {
         background-color: a.$black;
         position: absolute;
-        top: -50px;
+        top: -51px;
         right: 0;
         display: flex;
         @include a.breakpoint-up(medium){
             bottom: 0;
             top: initial;
             right: initial;
-            left: 0;
         }
+            @include a.breakpoint-up(large) {
+                left: -19px;
+            }
             a{
-                padding: 0.95rem 1.5rem;
                 display: flex;
                 align-items: center;
-                transition: background-color 500ms ease-in-out;
+                transition: background-color 250ms ease-in-out;
+                padding: 1rem 1.5rem;
+                    @include a.breakpoint-up(large) {
+                        padding: 2.5rem 2.7rem;
+                    
+                    }
             }
     }
 

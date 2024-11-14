@@ -7,6 +7,7 @@
 }
 
 html {
+  scroll-behavior: smooth;
   font-size: 12px;
 }
 
@@ -32,7 +33,7 @@ p {
 
 @keyframes left-to-right {
   100% {
-    transform: translateX(170%);
+    transform: translateX(100%);
   }
 }
 .hero__nav-link:hover,
@@ -75,6 +76,8 @@ p {
 
 .hero {
   position: relative;
+  max-width: 1440px;
+  margin-inline: auto;
 }
 @media (min-width: 52.5em) {
   .hero {
@@ -98,7 +101,7 @@ p {
 }
 @media (min-width: 81.25em) {
   .hero__img {
-    flex: 1.2;
+    flex: 1.5;
   }
 }
 @media (max-width: 31.1875em) {
@@ -113,18 +116,25 @@ p {
 }
 .hero label {
   position: absolute;
-  top: 30px;
+  top: 50px;
   z-index: 5;
   left: 0;
 }
 .hero__room-logo {
   position: absolute;
-  top: 32px;
-  left: 40vw;
+  top: 50px;
+  left: 50vw;
 }
 @media (min-width: 31.25em) {
   .hero__room-logo {
-    left: 30px;
+    top: 60px;
+    left: 24px;
+  }
+}
+@media (min-width: 81.25em) {
+  .hero__room-logo {
+    top: 60px;
+    left: 60px;
   }
 }
 .hero .nav-toggle {
@@ -147,9 +157,10 @@ p {
   top: 0;
   left: 0;
   width: 100%;
-  height: 80px;
+  height: 100px;
   background-color: hsl(0, 0%, 100%);
   padding-inline-start: 3.125rem;
+  padding-block-start: 1.2rem;
   display: flex;
   visibility: hidden;
   justify-content: center;
@@ -165,15 +176,21 @@ p {
     opacity: 1;
     height: initial;
     background-color: initial;
-    top: 35px;
-    left: 160px;
+    top: 60px;
+    left: 140px;
     padding: 0;
     width: initial;
-    gap: 2rem;
+    gap: 2.8rem;
+  }
+}
+@media (min-width: 81.25em) {
+  .hero__nav {
+    top: 60px;
+    left: 180px;
   }
 }
 .hero__nav-link {
-  font-size: clamp(1rem, 0.929rem + 0.268vw, 1.25rem);
+  font-size: clamp(1rem, 0.952rem + 0.179vw, 1.167rem);
   text-transform: lowercase;
   font-weight: 700;
   color: hsl(0, 0%, 27%);
@@ -212,26 +229,27 @@ p {
 }
 @media (min-width: 52.5em) {
   .hero__text {
-    padding-block: 6rem;
+    padding: 5rem 3rem;
   }
 }
 @media (min-width: 81.25em) {
   .hero__text {
-    padding: 7.5rem;
+    padding: 9.8rem 5rem;
   }
 }
 .hero__title {
   font-size: clamp(2.5rem, 2.19rem + 1.161vw, 3.583rem);
+  line-height: 1.1;
   margin-block-end: 1rem;
 }
 .hero__desc {
   color: hsl(0, 0%, 63%);
   font-weight: 500;
-  margin-block-end: 2.5rem;
-  font-size: clamp(1rem, 0.881rem + 0.446vw, 1.417rem);
+  margin-block-end: 1.5rem;
+  font-size: clamp(1rem, 0.952rem + 0.179vw, 1.167rem);
 }
 .hero__shop-btn {
-  font-size: clamp(1rem, 0.881rem + 0.446vw, 1.417rem);
+  font-size: clamp(1rem, 0.952rem + 0.179vw, 1.167rem);
   color: hsl(0, 0%, 27%);
   text-transform: uppercase;
   font-weight: 700;
@@ -239,6 +257,7 @@ p {
   display: flex;
   gap: 1rem;
   align-items: center;
+  margin-block-end: 3rem;
 }
 .hero__shop-btn img {
   animation: left-to-right 1500ms cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
@@ -246,7 +265,7 @@ p {
 .hero__pages-btn {
   background-color: hsl(0, 0%, 0%);
   position: absolute;
-  top: -50px;
+  top: -51px;
   right: 0;
   display: flex;
 }
@@ -255,16 +274,29 @@ p {
     bottom: 0;
     top: initial;
     right: initial;
-    left: 0;
+  }
+}
+@media (min-width: 81.25em) {
+  .hero__pages-btn {
+    left: -19px;
   }
 }
 .hero__pages-btn a {
-  padding: 0.95rem 1.5rem;
   display: flex;
   align-items: center;
-  transition: background-color 500ms ease-in-out;
+  transition: background-color 250ms ease-in-out;
+  padding: 1rem 1.5rem;
+}
+@media (min-width: 81.25em) {
+  .hero__pages-btn a {
+    padding: 2.5rem 2.7rem;
+  }
 }
 
+.about {
+  max-width: 1440px;
+  margin-inline: auto;
+}
 @media (min-width: 52.5em) {
   .about {
     display: grid;
@@ -273,7 +305,7 @@ p {
 }
 @media (min-width: 81.25em) {
   .about {
-    grid-template-columns: 1fr 48% 1fr;
+    grid-template-columns: 1fr 41% 1fr;
   }
 }
 .about__text-wraper {
@@ -290,18 +322,19 @@ p {
 @media (min-width: 81.25em) {
   .about__text-wraper {
     order: initial;
+    padding: 5.5rem 2.2rem;
   }
 }
 .about__title {
-  font-size: clamp(1rem, 0.81rem + 0.714vw, 1.667rem);
   margin-block-end: 1rem;
+  font-size: clamp(1.167rem, 1.071rem + 0.357vw, 1.5rem);
   text-transform: uppercase;
-  letter-spacing: 0.3rem;
+  letter-spacing: 0.5rem;
 }
 .about__desc {
   color: hsl(0, 0%, 63%);
   font-weight: 500;
-  font-size: clamp(1rem, 0.881rem + 0.446vw, 1.417rem);
+  font-size: clamp(1rem, 0.952rem + 0.179vw, 1.167rem);
 }
 @media (max-width: 31.1875em) {
   .about__img-dark--desktop {
@@ -325,6 +358,8 @@ p {
 }
 
 .footer {
+  max-width: 1440px;
+  margin-inline: auto;
   background-color: hsl(0, 0%, 0%);
   padding-block-start: 3rem;
   padding: 1rem;

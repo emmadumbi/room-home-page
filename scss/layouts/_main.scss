@@ -1,14 +1,16 @@
 @use "../abstracts/" as a;
 
 .about {
-    @include a.breakpoint-up(medium){
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
+    max-width: 1440px;
+    margin-inline: auto;
+        @include a.breakpoint-up(medium){
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
 
-    @include a.breakpoint-up(large){
-        grid-template-columns: 1fr 48% 1fr;
-    }
+            @include a.breakpoint-up(large){
+                grid-template-columns: 1fr 41% 1fr;
+            }
 
     &__text-wraper {
         @include a.my-width;
@@ -19,14 +21,15 @@
             }
                 @include a.breakpoint-up(large){
                     order: initial;
+                    padding: 5.5rem 2.2rem;
                 }
     }
 
     &__title {
-        font-size: clamp(1rem, 0.81rem + 0.714vw, 1.667rem);
         margin-block-end: a.$base-margin;
+        font-size: clamp(1.167rem, 1.071rem + 0.357vw, 1.5rem);
         text-transform: uppercase;
-        letter-spacing: 0.3rem;
+        letter-spacing: 0.5rem;
     }
 
    
@@ -34,7 +37,7 @@
     &__desc {
         color: a.$dark-gray;
         font-weight: 500;
-        font-size: clamp(1rem, 0.881rem + 0.446vw, 1.417rem);
+        font-size: clamp(1rem, 0.952rem + 0.179vw, 1.167rem);
     }
 
 

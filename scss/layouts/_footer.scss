@@ -1,6 +1,8 @@
 @use '../abstracts/' as a;
 
 .footer {
+    max-width: 1440px;
+    margin-inline: auto;
     background-color: a.$black;
     padding-block-start: a.$base-padding;
     padding: a.$padding-2;
